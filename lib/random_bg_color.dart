@@ -22,8 +22,6 @@ class _RandomBGColorState extends State<RandomBGColor> {
 
   @override
   Widget build(BuildContext context) {
-    print(_currentColor);
-
     return GestureDetector(
       onTap: _changeColor,
       child: CupertinoPageScaffold(
@@ -32,7 +30,7 @@ class _RandomBGColorState extends State<RandomBGColor> {
           child: Text(
             'Hey there',
             style: TextStyle(
-              color: Color(0xffffffff - _currentColor.value),
+              color: Color((~_currentColor.value)),
             ),
           ),
         ),
